@@ -21,7 +21,7 @@
             <artifactId>calculator</artifactId>
             <version>${calculator-version}</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/calculator-${calculator-version}.jar</systemPath>
+            <systemPath>${project.basedir}/src/test/resources/libs/calculator-${calculator-version}.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -74,5 +74,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
