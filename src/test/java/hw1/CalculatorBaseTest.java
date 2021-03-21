@@ -1,21 +1,20 @@
 package hw1;
 
 import com.epam.tat.module4.Calculator;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class CalculatorBaseTest {
 
     protected Calculator calculator;
     protected static final double DOUBLE_DELTA = 1e-6;
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
-        System.out.println("213");
         calculator = new Calculator();
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
         calculator = null;
     }
