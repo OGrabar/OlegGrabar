@@ -15,6 +15,7 @@
         <testng-version>7.4.0</testng-version>
         <web-driver-manager-version>4.3.1</web-driver-manager-version>
         <selenium-version>4.0.0-beta-1</selenium-version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -45,7 +46,7 @@
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw2/regression-tests.xml</suite.file>
+                <suite.file>${project.basedir}/src/test/resources/hw2/hw2-tests.xml</suite.file>
             </properties>
         </profile>
     </profiles>
