@@ -60,5 +60,4 @@ public class Header extends BaseComponent{
         differentElementsServiceMenuItem.click();
         return new DifferentElementsPage(driver);
     }
-
 }

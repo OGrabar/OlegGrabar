@@ -3,7 +3,6 @@ package hw3.pages;
 import java.util.List;
 
 import hw3.pages.components.FrameWithButton;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -63,5 +62,4 @@ public class HomePage extends BasePage {
     public DifferentElementsPage navToDifferentElementsPage() {
         return header.navToDifferentElementsPage();
     }
-
 }

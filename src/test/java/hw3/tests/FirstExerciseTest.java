@@ -32,6 +32,7 @@ public class FirstExerciseTest extends TestBase {
 
     @Test
     public void firstExerciseTest() {
+        //1. Open test site by URL
         HomePage homePage = new HomePage(driver);
         homePage.openPage();
 
@@ -66,6 +67,4 @@ public class FirstExerciseTest extends TestBase {
 
         softAssert.assertAll();
     }
-
-
 }

@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 public final class Utils {
 
     private Utils() {
-
     }
 
     public static List<String> getNotEmptyTextFromWebElements(List<WebElement> webElements) {

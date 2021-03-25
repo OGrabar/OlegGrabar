@@ -16,6 +16,7 @@ public class SecondExerciseTest extends TestBase{
 
     @Test
     public void secondExerciseTest() {
+        //1. Open test site by URL
         HomePage homePage = new HomePage(driver);
         homePage.openPage();
 

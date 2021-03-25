@@ -29,5 +29,4 @@ public class FrameWithButton extends BaseComponent{
     public WebElement getButton() {
         return button;
     }
-
 }

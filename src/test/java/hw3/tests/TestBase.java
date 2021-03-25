@@ -36,5 +36,4 @@ public class TestBase {
     public void afterClass() {
         driver.close();
     }
-
 }

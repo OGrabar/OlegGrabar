@@ -19,5 +19,4 @@ public class LogsPanel extends BaseComponent{
     public List<String> getLogs() {
         return getNotEmptyTextFromWebElements(logsItems);
     }
-
 }

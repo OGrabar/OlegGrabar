@@ -20,5 +20,4 @@ public class Sidebar extends BaseComponent{
     public List<String> getMenuItemsText() {
         return getNotEmptyTextFromWebElements(menuItems);
     }
-
 }
