@@ -41,12 +41,12 @@
 
     <profiles>
         <profile>
-            <id>hw2-tests</id>
+            <id>hw3-tests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw2/hw2-tests.xml</suite.file>
+                <suite.file>${project.basedir}/src/test/resources/hw3/hw3-tests.xml</suite.file>
             </properties>
         </profile>
     </profiles>
