@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
+
 public class TestBase {
 
     private static final String DEFAULT_LOGIN = "Roman";
