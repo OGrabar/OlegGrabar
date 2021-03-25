@@ -4,6 +4,7 @@ import java.util.List;
 import hw3.pages.components.LogsPanel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class DifferentElementsPage extends BasePage {
 
@@ -27,8 +28,8 @@ public class DifferentElementsPage extends BasePage {
         return this;
     }
 
-    public void clickCheckBox(String checkBox) {
-        driver.findElement(By.xpath(String.format(CHECKBOX_XPATH_SELECTOR, checkBox))).click();
+    public void clickCheckBox(String checkBoxText) {
+        driver.findElement(By.xpath(String.format(CHECKBOX_XPATH_SELECTOR, checkBoxText))).click();
     }
 
     public void clickRadioButton(String radioButtonText) {
