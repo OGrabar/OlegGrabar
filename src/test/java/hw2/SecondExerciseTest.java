@@ -13,21 +13,13 @@ public class SecondExerciseTest extends TestBase{
     private static final String SELEN_RADIO_BUTTON = "Selen";
     private static final String YELLOW_DROPDOWN_OPTION = "Yellow";
 
-    private static final String SERVICE_MENU_XPATH_SELECTOR =
-            "//a[@class = 'dropdown-toggle' and text()[contains(., 'Service')]]";
-    private static final String SERVICE_MENU_DIFFERENT_ELEMENTS_XPATH_SELECTOR =
-            "//ul[@class ='dropdown-menu']/descendant-or-self::*[text() = 'Different elements']";
-    private static final String LOGS_XPATH_SELECTOR = "//ul[@class = 'panel-body-list logs']/li";
-    private static final String CHECKBOX_XPATH_SELECTOR = "//label[@class = 'label-checkbox' and text()[contains(., '%s')]]";
-    private static final String RADIO_BUTTON_XPATH_SELECTOR = "//label[@class = 'label-radio' and text()[contains(., '%s')]]";
-    private static final String DROPDOWN_OPTION_XPATH_SELECTOR = "//select/option[text()[contains(., '%s')]]";
 
     @Test
     public void secondExerciseTest() {
         //2.Assert Browser title
         checkBrowserTitle();
         //3-4. Perform login. Assert Username
-        performLogin();
+        performLogin(LoginUser.ROMAN);
 
         //5. Open through the header menu Service -> Different Elements Page
         goToDifferentElementsPage();
@@ -48,33 +40,37 @@ public class SecondExerciseTest extends TestBase{
         softAssert.assertAll();
     }
 
-    private static void goToDifferentElementsPage() {
-        WebElement topNavigationBarServiceItem = driver.findElement(By.xpath(SERVICE_MENU_XPATH_SELECTOR));
+    private void goToDifferentElementsPage() {
+        WebElement topNavigationBarServiceItem = driver
+                .findElement(By.xpath("//a[@class = 'dropdown-toggle' and text()[contains(., 'Service')]]"));
         topNavigationBarServiceItem.click();
-        WebElement serviceMenuDifferentElementItem = driver.findElement(By.xpath(SERVICE_MENU_DIFFERENT_ELEMENTS_XPATH_SELECTOR));
+        WebElement serviceMenuDifferentElementItem = driver
+                .findElement(By.xpath("//ul[@class ='dropdown-menu']/descendant-or-self::*[text() = 'Different elements']"));
         serviceMenuDifferentElementItem.click();
         softAssert.assertEquals(driver.getTitle(), EXPECTED_DIFFERENT_ELEMENTS_PAGE_TITLE);
     }
 
-    private static void clickCheckBox(String checkBox) {
-        driver.findElement(By.xpath(String.format(CHECKBOX_XPATH_SELECTOR, checkBox))).click();
+    private void clickCheckBox(String checkBox) {
+        driver.findElement(By.xpath(String.format("//label[@class = 'label-checkbox' and text()[contains(., '%s')]]", checkBox)))
+                .click();
     }
 
-    private static void clickRadioButton(String radioButtonText) {
-        driver.findElement(By.xpath(String.format(RADIO_BUTTON_XPATH_SELECTOR, radioButtonText))).click();
+    private void clickRadioButton(String radioButtonText) {
+        driver.findElement(By.xpath(String.format("//label[@class = 'label-radio' and text()[contains(., '%s')]]", radioButtonText)))
+                .click();
     }
 
-    private static void selectDropdownOption(String dropdownOption) {
-       driver.findElement(By.xpath(String.format(DROPDOWN_OPTION_XPATH_SELECTOR, dropdownOption))).click();
+    private void selectDropdownOption(String dropdownOption) {
+       driver.findElement(By.xpath(String.format("//select/option[text()[contains(., '%s')]]", dropdownOption))).click();
     }
 
-    private static void checkLogs() {
-        List<WebElement> logsItems = driver.findElements(By.xpath(LOGS_XPATH_SELECTOR));
+    private void checkLogs() {
+        List<WebElement> logsItems = driver.findElements(By.xpath("//ul[@class = 'panel-body-list logs']/li"));
         List<String> logsText = getNotEmptyTextFromWebElements(logsItems);
 
-        softAssert.assertTrue(logsText.get(logsText.size() - 1).contains(WATER_CHECKBOX));
-        softAssert.assertTrue(logsText.get(logsText.size() - 2).contains(WIND_CHECKBOX));
-        softAssert.assertTrue(logsText.get(logsText.size() - 3).contains(SELEN_RADIO_BUTTON));
-        softAssert.assertTrue(logsText.get(logsText.size() - 4).contains(YELLOW_DROPDOWN_OPTION));
+        softAssert.assertTrue(logsText.get(3).contains(WATER_CHECKBOX));
+        softAssert.assertTrue(logsText.get(2).contains(WIND_CHECKBOX));
+        softAssert.assertTrue(logsText.get(1).contains(SELEN_RADIO_BUTTON));
+        softAssert.assertTrue(logsText.get(0).contains(YELLOW_DROPDOWN_OPTION));
     }
 }
