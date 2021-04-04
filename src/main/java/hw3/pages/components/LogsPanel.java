@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static hw3.Utils.Utils.getNotEmptyTextFromWebElements;
+import static hw3.utils.Utils.getNotEmptyTextFromWebElements;
 
 public class LogsPanel extends BaseComponent{
 

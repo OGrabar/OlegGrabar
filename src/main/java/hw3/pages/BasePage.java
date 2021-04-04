@@ -1,9 +1,10 @@
 package hw3.pages;
 
-import hw3.pages.components.Sidebar;
-import hw3.pages.components.Header;
+import hw3.users.LoginUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import hw3.pages.components.Header;
+import hw3.pages.components.Sidebar;
 
 import java.util.List;
 
@@ -21,8 +22,8 @@ public abstract class BasePage {
         sidebar = new Sidebar(driver);
     }
 
-    public BasePage performLogin(String login, String password) {
-        header.performLogin(login, password);
+    public BasePage performLogin(LoginUser loginUser) {
+        header.performLogin(loginUser);
         return this;
     }
 

@@ -1,13 +1,15 @@
 package hw3.pages.components;
 
 import hw3.pages.DifferentElementsPage;
+import hw3.users.LoginUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static hw3.Utils.Utils.getNotEmptyTextFromWebElements;
+import static hw3.utils.Utils.getNotEmptyTextFromWebElements;
+
 
 public class Header extends BaseComponent{
 
@@ -39,10 +41,10 @@ public class Header extends BaseComponent{
         super(driver);
     }
 
-    public Header performLogin(String login, String password) {
+    public Header performLogin(LoginUser loginUser) {
         loginDropdown.click();
-        loginField.sendKeys(login);
-        passwordField.sendKeys(password);
+        loginField.sendKeys(loginUser.getLogin());
+        passwordField.sendKeys(loginUser.getPassword());
         submitButton.click();
         return this;
     }

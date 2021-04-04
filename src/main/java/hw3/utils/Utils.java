@@ -1,4 +1,4 @@
-package hw3.Utils;
+package hw3.utils;
 
 import org.openqa.selenium.WebElement;
 

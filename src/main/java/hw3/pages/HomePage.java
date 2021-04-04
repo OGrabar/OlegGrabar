@@ -2,12 +2,13 @@ package hw3.pages;
 
 import java.util.List;
 
-import hw3.pages.components.FrameWithButton;
+import hw3.users.LoginUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import hw3.pages.components.FrameWithButton;
 
-import static hw3.Utils.Utils.getNotEmptyTextFromWebElements;
+import static hw3.utils.Utils.getNotEmptyTextFromWebElements;
 
 public class HomePage extends BasePage {
 
@@ -34,8 +35,8 @@ public class HomePage extends BasePage {
     }
 
     @Override
-    public HomePage performLogin(String login, String password) {
-        super.performLogin(login, password);
+    public HomePage performLogin(LoginUser loginUser) {
+        super.performLogin(loginUser);
         return this;
     }
 

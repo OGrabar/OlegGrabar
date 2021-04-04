@@ -2,9 +2,10 @@ package hw3.tests;
 
 import java.util.List;
 
+import hw3.users.LoginUser;
+import org.testng.annotations.Test;
 import hw3.pages.DifferentElementsPage;
 import hw3.pages.HomePage;
-import org.testng.annotations.Test;
 
 public class SecondExerciseTest extends TestBase{
 
@@ -24,8 +25,8 @@ public class SecondExerciseTest extends TestBase{
         softAssert.assertEquals(homePage.getTitle(), EXPECTED_HOME_PAGE_TITLE);
 
         //3-4. Perform login. Assert Username is logined
-        homePage.performLogin(LOGIN, PASSWORD);
-        softAssert.assertEquals(homePage.getUsername(), USERNAME);
+        homePage.performLogin(LoginUser.ROMAN);
+        softAssert.assertEquals(homePage.getUsername(), LoginUser.ROMAN.getUsername());
 
         //5. Open through the header menu Service -> Different Elements Page
         DifferentElementsPage differentElementsPage = homePage.navToDifferentElementsPage();
@@ -48,9 +49,9 @@ public class SecondExerciseTest extends TestBase{
     }
 
     private static void checkLogs(List<String> logs) {
-        softAssert.assertTrue(logs.get(logs.size() - 1).contains(WATER_CHECKBOX));
-        softAssert.assertTrue(logs.get(logs.size() - 2).contains(WIND_CHECKBOX));
-        softAssert.assertTrue(logs.get(logs.size() - 3).contains(SELEN_RADIO_BUTTON));
-        softAssert.assertTrue(logs.get(logs.size() - 4).contains(YELLOW_DROPDOWN_OPTION));
+        softAssert.assertTrue(logs.get(3).contains(WATER_CHECKBOX));
+        softAssert.assertTrue(logs.get(2).contains(WIND_CHECKBOX));
+        softAssert.assertTrue(logs.get(1).contains(SELEN_RADIO_BUTTON));
+        softAssert.assertTrue(logs.get(0).contains(YELLOW_DROPDOWN_OPTION));
     }
 }

@@ -12,13 +12,6 @@ import java.time.Duration;
 
 public class TestBase {
 
-    private static final String DEFAULT_LOGIN = "Roman";
-    private static final String DEFAULT_PASSWORD = "Jdi1234";
-    private static final String DEFAULT_USERNAME = "ROMAN IOVLEV";
-    protected static final String LOGIN = System.getProperty("login", DEFAULT_LOGIN);
-    protected static final String PASSWORD = System.getProperty("password", DEFAULT_PASSWORD);
-    protected static final String USERNAME = System.getProperty("user", DEFAULT_USERNAME);
-
     protected static final String EXPECTED_HOME_PAGE_TITLE = "Home Page";
 
     protected static final SoftAssert softAssert = new SoftAssert();

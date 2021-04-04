@@ -1,8 +1,9 @@
 package hw3.tests;
 
+import hw3.users.LoginUser;
+import org.testng.annotations.Test;
 import hw3.pages.HomePage;
 import hw3.pages.components.FrameWithButton;
-import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +41,8 @@ public class FirstExerciseTest extends TestBase {
         softAssert.assertEquals(homePage.getTitle(), EXPECTED_HOME_PAGE_TITLE);
 
         //3-4. Perform login. Assert Username is logined
-        homePage.performLogin(LOGIN, PASSWORD);
-        softAssert.assertEquals(homePage.getUsername(), USERNAME);
+        homePage.performLogin(LoginUser.ROMAN);
+        softAssert.assertEquals(homePage.getUsername(), LoginUser.ROMAN.getUsername());
 
         //5.Assert that there are 4 items on the header section are displayed and they have proper texts
         softAssert.assertEquals(homePage.getHeaderMenuItemsText(), EXPECTED_HEADER_ITEMS_TEXT);

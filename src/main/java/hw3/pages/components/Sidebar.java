@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static hw3.Utils.Utils.getNotEmptyTextFromWebElements;
+import static hw3.utils.Utils.getNotEmptyTextFromWebElements;
 
 public class Sidebar extends BaseComponent{
 
