@@ -1,9 +1,9 @@
-package hw3.pages;
+package hw4.pages;
 
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import hw3.pages.components.LogsPanel;
+import hw4.pages.components.LogsPanel;
 
 public class DifferentElementsPage extends BasePage {
 

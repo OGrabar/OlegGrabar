@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Hw4 test suite">
+    <listeners>
+        <listener class-name="hw4.listeners.ScreenShotOnFailListener"></listener>
+    </listeners>
+    <test name="Hw4 tests">
+        <classes>
+            <class name="hw4.tests.SecondExerciseTest" />
+            <class name="hw4.tests.FirstExerciseTest" />
+            <class name="hw4.tests.FailedTest" />
+        </classes>
+    </test>
+</suite>

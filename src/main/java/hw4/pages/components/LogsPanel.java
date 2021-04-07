@@ -1,11 +1,11 @@
-package hw3.pages.components;
+package hw4.pages.components;
 
 import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static hw3.utils.Utils.getNotEmptyTextFromWebElements;
+import static hw4.utils.Utils.getNotEmptyTextFromWebElements;
 
 public class LogsPanel extends BaseComponent{
 

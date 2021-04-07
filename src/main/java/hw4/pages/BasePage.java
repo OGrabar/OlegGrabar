@@ -1,10 +1,10 @@
-package hw3.pages;
+package hw4.pages;
 
-import hw3.users.LoginUser;
+import hw4.users.LoginUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import hw3.pages.components.Header;
-import hw3.pages.components.Sidebar;
+import hw4.pages.components.Header;
+import hw4.pages.components.Sidebar;
 
 import java.util.List;
 

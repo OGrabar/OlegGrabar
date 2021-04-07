@@ -1,14 +1,14 @@
-package hw3.pages;
+package hw4.pages;
 
 import java.util.List;
 
-import hw3.users.LoginUser;
+import hw4.users.LoginUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import hw3.pages.components.FrameWithButton;
+import hw4.pages.components.FrameWithButton;
 
-import static hw3.utils.Utils.getNotEmptyTextFromWebElements;
+import static hw4.utils.Utils.getNotEmptyTextFromWebElements;
 
 public class HomePage extends BasePage {
 
@@ -55,6 +55,8 @@ public class HomePage extends BasePage {
     public FrameWithButton switchToFrameWithButton() {
         return frameWithButton.switchToFrameWithButton();
     }
+
+    public WebElement getFrameButton() { return frameWithButton.getButton(); }
 
     public void switchToIndexPage() {
         driver.switchTo().defaultContent();

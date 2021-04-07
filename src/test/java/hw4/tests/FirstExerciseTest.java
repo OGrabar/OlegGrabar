@@ -1,9 +1,7 @@
-package hw3.tests;
+package hw4.tests;
 
-import hw3.users.LoginUser;
+import hw4.users.LoginUser;
 import org.testng.annotations.Test;
-import hw3.pages.HomePage;
-import hw3.pages.components.FrameWithButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,41 +29,38 @@ public class FirstExerciseTest extends TestBase {
         add("Elements packs");
     }};
 
-    @Test
+    @Test(description = "First exercise test")
     public void firstExerciseTest() {
         //1. Open test site by URL
-        HomePage homePage = new HomePage(driver);
-        homePage.openPage();
+        actionStep.openHomePage();
 
         //2.Assert Browser title
-        softAssert.assertEquals(homePage.getTitle(), EXPECTED_HOME_PAGE_TITLE);
+        assertionStep.checkHomePageTitle(EXPECTED_HOME_PAGE_TITLE);
 
         //3-4. Perform login. Assert Username is logined
-        homePage.performLogin(LoginUser.ROMAN);
-        softAssert.assertEquals(homePage.getUsername(), LoginUser.ROMAN.getUsername());
+        actionStep.performLogin(LoginUser.ROMAN);
+        assertionStep.checkUsername(LoginUser.ROMAN.getUsername());
 
         //5.Assert that there are 4 items on the header section are displayed and they have proper texts
-        softAssert.assertEquals(homePage.getHeaderMenuItemsText(), EXPECTED_HEADER_ITEMS_TEXT);
+        assertionStep.checkHeaderMenuItems(EXPECTED_HEADER_ITEMS_TEXT);
 
         //6.Assert that there are 4 images on the Index Page and they are displayed
-        softAssert.assertEquals(homePage.getBenefitsImages().size(), EXPECTED_BENEFITS_COUNT);
+        assertionStep.checkBenefitsCount(EXPECTED_BENEFITS_COUNT);
 
         //7.Assert that there are 4 texts on the Index Page under icons and they have proper tex
-        softAssert.assertEquals(homePage.getBenefitsText(), EXPECTED_BENEFIT_TEXTS);
+        assertionStep.checkBenefitsText(EXPECTED_BENEFIT_TEXTS);
 
         //8.Assert that there is the iframe with “Frame Button” exist
-        softAssert.assertNotNull(homePage.getFrameWithButton());
+        assertionStep.checkFrameWithButtonIsExist();
 
         //9.Switch to the iframe and check that there is “Frame Button” in the iframe
-        FrameWithButton frameWithButton = homePage.switchToFrameWithButton();
-        softAssert.assertNotNull(frameWithButton.getButton());
+        actionStep.switchToFrameWithButton();
+        assertionStep.checkThatFrameHasButton();
 
         //10.Switch to original window back
-        homePage.switchToIndexPage();
+        actionStep.switchBackToIndexPage();
 
         //11.Assert that there are 5 items in the Left Section are displayed and they have proper text
-        softAssert.assertEquals(homePage.getSidebarMenuItemsText(), EXPECTED_SIDE_NAV_BAR_ITEMS_TEXT);
-
-        softAssert.assertAll();
+        assertionStep.checkSidebarMenuItems(EXPECTED_SIDE_NAV_BAR_ITEMS_TEXT);
     }
 }

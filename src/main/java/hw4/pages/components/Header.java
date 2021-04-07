@@ -1,14 +1,14 @@
-package hw3.pages.components;
+package hw4.pages.components;
 
-import hw3.pages.DifferentElementsPage;
-import hw3.users.LoginUser;
+import hw4.pages.DifferentElementsPage;
+import hw4.users.LoginUser;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-import static hw3.utils.Utils.getNotEmptyTextFromWebElements;
+import static hw4.utils.Utils.getNotEmptyTextFromWebElements;
 
 
 public class Header extends BaseComponent{
