@@ -10,7 +10,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class TestBase {
+public abstract class TestBase {
 
     protected static final String EXPECTED_HOME_PAGE_TITLE = "Home Page";
 
