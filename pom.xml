@@ -18,6 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <allure.version>2.13.9</allure.version>
         <aspectj.version>1.9.6</aspectj.version>
+        <cucumber.version>6.10.2</cucumber.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
         <allure-maven.version>2.9</allure-maven.version>
         <allure-maven.reportVersion>2.6.0</allure-maven.reportVersion>
@@ -49,16 +50,29 @@
             <version>${allure.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-testng</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+        </dependency>
+
     </dependencies>
 
     <profiles>
         <profile>
-            <id>hw4-tests</id>
+            <id>hw5-tests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw4/hw4-tests.xml</suite.file>
+                <suite.file>${project.basedir}/src/test/resources/hw5/hw5-tests.xml</suite.file>
             </properties>
         </profile>
     </profiles>
