@@ -13,15 +13,11 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <calculator-version>1.0</calculator-version>
         <testng-version>7.4.0</testng-version>
-        <web-driver-manager-version>4.3.1</web-driver-manager-version>
-        <selenium-version>4.0.0-beta-1</selenium-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <allure.version>2.13.9</allure.version>
-        <aspectj.version>1.9.6</aspectj.version>
-        <cucumber.version>6.10.2</cucumber.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-        <allure-maven.version>2.9</allure-maven.version>
-        <allure-maven.reportVersion>2.6.0</allure-maven.reportVersion>
+        <jdi-light-html.version>RELEASE</jdi-light-html.version>
+        <lombok.version>1.18.20</lombok.version>
+        <aspectjweaver.version>1.9.6</aspectjweaver.version>
     </properties>
 
     <dependencies>
@@ -31,48 +27,27 @@
             <version>${testng-version}</version>
             <scope>test</scope>
         </dependency>
-
         <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>${web-driver-manager-version}</version>
+            <groupId>com.epam.jdi</groupId>
+            <artifactId>jdi-light-html</artifactId>
+            <version>${jdi-light-html.version}</version>
         </dependency>
-
         <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>${selenium-version}</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
-
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-testng</artifactId>
-            <version>${allure.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>${cucumber.version}</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>${cucumber.version}</version>
-        </dependency>
-
     </dependencies>
 
     <profiles>
         <profile>
-            <id>hw5-tests</id>
+            <id>hw6-tests</id>
             <activation>
                 <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
-                <suite.file>${project.basedir}/src/test/resources/hw5/hw5-tests.xml</suite.file>
+                <suite.file>${project.basedir}/src/test/resources/hw6/hw6-tests.xml</suite.file>
             </properties>
         </profile>
     </profiles>
@@ -85,7 +60,7 @@
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar"
                     </argLine>
                     <suiteXmlFiles>
                         <suiteXmlFile>${suite.file}</suiteXmlFile>
@@ -95,17 +70,9 @@
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
+                        <version>${aspectjweaver.version}</version>
                     </dependency>
                 </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>${allure-maven.version}</version>
-                <configuration>
-                    <reportVersion>${allure-maven.reportVersion}</reportVersion>
-                </configuration>
             </plugin>
         </plugins>
     </build>

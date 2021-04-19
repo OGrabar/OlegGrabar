@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="Hw5 test suite">
-    <test name="Hw5 tests">
+<suite name="Hw6 test suite">
+    <test name="Hw6 tests">
         <classes>
-            <class name="hw5.CucumberTestsRunner" />
+            <class name="hw6.JdiTest" />
         </classes>
     </test>
 </suite>
