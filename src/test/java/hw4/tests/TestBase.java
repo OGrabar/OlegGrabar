@@ -41,7 +41,6 @@ public abstract class TestBase {
         assertionStep = new AssertionStep(driver);
         context.setAttribute("driver", driver);
         user = new User(LOGIN, PASSWORD, USERNAME);
-
     }
 
     @AfterClass
