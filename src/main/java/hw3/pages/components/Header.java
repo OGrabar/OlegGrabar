@@ -1,7 +1,7 @@
 package hw3.pages.components;
 
 import hw3.pages.DifferentElementsPage;
-import hw3.users.LoginUser;
+import hw3.users.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,10 +41,10 @@ public class Header extends BaseComponent{
         super(driver);
     }
 
-    public Header performLogin(LoginUser loginUser) {
+    public Header performLogin(User user) {
         loginDropdown.click();
-        loginField.sendKeys(loginUser.getLogin());
-        passwordField.sendKeys(loginUser.getPassword());
+        loginField.sendKeys(user.getLogin());
+        passwordField.sendKeys(user.getPassword());
         submitButton.click();
         return this;
     }

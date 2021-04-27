@@ -2,7 +2,7 @@ package hw3.pages;
 
 import java.util.List;
 
-import hw3.users.LoginUser;
+import hw3.users.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,8 +35,8 @@ public class HomePage extends BasePage {
     }
 
     @Override
-    public HomePage performLogin(LoginUser loginUser) {
-        super.performLogin(loginUser);
+    public HomePage performLogin(User user) {
+        super.performLogin(user);
         return this;
     }
 

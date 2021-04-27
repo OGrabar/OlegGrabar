@@ -2,7 +2,6 @@ package hw3.tests;
 
 import java.util.List;
 
-import hw3.users.LoginUser;
 import org.testng.annotations.Test;
 import hw3.pages.DifferentElementsPage;
 import hw3.pages.HomePage;
@@ -25,8 +24,8 @@ public class SecondExerciseTest extends TestBase{
         softAssert.assertEquals(homePage.getTitle(), EXPECTED_HOME_PAGE_TITLE);
 
         //3-4. Perform login. Assert Username is logined
-        homePage.performLogin(LoginUser.ROMAN);
-        softAssert.assertEquals(homePage.getUsername(), LoginUser.ROMAN.getUsername());
+        homePage.performLogin(user);
+        softAssert.assertEquals(homePage.getUsername(), user.getUsername());
 
         //5. Open through the header menu Service -> Different Elements Page
         DifferentElementsPage differentElementsPage = homePage.navToDifferentElementsPage();
