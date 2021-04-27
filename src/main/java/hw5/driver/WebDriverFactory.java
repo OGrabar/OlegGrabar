@@ -10,7 +10,6 @@ import java.time.Duration;
 
 public class WebDriverFactory {
 
-    private static final String CHROME = "chrome";
     private static final String FIREFOX = "firefox";
     private static final String OPERA = "opera";
 
