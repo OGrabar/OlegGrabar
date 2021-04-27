@@ -20,6 +20,14 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.epam</groupId>
+            <artifactId>calculator</artifactId>
+            <version>${calculator-version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/test/resources/libs/calculator-${calculator-version}.jar</systemPath>
+        </dependency>
+
+        <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>${testng-version}</version>
@@ -40,6 +48,30 @@
     </dependencies>
 
     <profiles>
+        <profile>
+            <id>sum-sub-tests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw1/sum-and-sub-tests.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>mult-div-tests</id>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw1/mult-and-div-tests.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>regression-tests</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <properties>
+                <suite.file>${project.basedir}/src/test/resources/hw1/regression-tests.xml</suite.file>
+            </properties>
+        </profile>
         <profile>
             <id>hw3-tests</id>
             <activation>

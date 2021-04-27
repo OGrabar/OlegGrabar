@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Sum and sub test suite">
+    <test name="Sum tests">
+        <classes>
+            <class name="hw1.arithmetic.SumOperationTest"/>
+        </classes>
+    </test>
+
+    <test name="Sub tests">
+        <classes>
+            <class name="hw1.arithmetic.SubOperationTest"/>
+        </classes>
+    </test>
+</suite>
