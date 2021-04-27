@@ -1,6 +1,6 @@
 package hw4.tests;
 
-import hw4.users.LoginUser;
+import hw4.users.User;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -38,8 +38,8 @@ public class FirstExerciseTest extends TestBase {
         assertionStep.checkHomePageTitle(EXPECTED_HOME_PAGE_TITLE);
 
         //3-4. Perform login. Assert Username is logined
-        actionStep.performLogin(LoginUser.ROMAN);
-        assertionStep.checkUsername(LoginUser.ROMAN.getUsername());
+        actionStep.performLogin(user);
+        assertionStep.checkUsername(user.getUsername());
 
         //5.Assert that there are 4 items on the header section are displayed and they have proper texts
         assertionStep.checkHeaderMenuItems(EXPECTED_HEADER_ITEMS_TEXT);

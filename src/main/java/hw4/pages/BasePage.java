@@ -1,6 +1,6 @@
 package hw4.pages;
 
-import hw4.users.LoginUser;
+import hw4.users.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import hw4.pages.components.Header;
@@ -22,8 +22,8 @@ public abstract class BasePage {
         sidebar = new Sidebar(driver);
     }
 
-    public BasePage performLogin(LoginUser loginUser) {
-        header.performLogin(loginUser);
+    public BasePage performLogin(User user) {
+        header.performLogin(user);
         return this;
     }
 
@@ -44,4 +44,8 @@ public abstract class BasePage {
     }
 
     public abstract BasePage openPage();
+
+    public void navToPageThroughHeaderServiceMenu(String page) {
+        header.navToPageThroughHeaderServiceMenu(page);
+    }
 }

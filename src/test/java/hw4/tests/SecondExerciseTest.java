@@ -1,6 +1,6 @@
 package hw4.tests;
 
-import hw4.users.LoginUser;
+import hw4.users.User;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
@@ -9,6 +9,7 @@ import java.util.List;
 public class SecondExerciseTest extends TestBase{
 
     private static final String EXPECTED_DIFFERENT_ELEMENTS_PAGE_TITLE = "Different Elements";
+    private static final String DIFFERENT_ELEMENTS_PAGE = "Different elements";
     private static final String WIND_CHECKBOX = "Wind";
     private static final String WATER_CHECKBOX = "Water";
     private static final String SELEN_RADIO_BUTTON = "Selen";
@@ -30,11 +31,11 @@ public class SecondExerciseTest extends TestBase{
         assertionStep.checkHomePageTitle(EXPECTED_HOME_PAGE_TITLE);
 
         //3-4. Perform login. Assert Username is logined
-        actionStep.performLogin(LoginUser.ROMAN);
-        assertionStep.checkUsername(LoginUser.ROMAN.getUsername());
+        actionStep.performLogin(user);
+        assertionStep.checkUsername(user.getUsername());
 
         //5. Open through the header menu Service -> Different Elements Page
-        actionStep.openDifferentElementsPage();
+        actionStep.openPageThroughHeaderServiceMenu(DIFFERENT_ELEMENTS_PAGE);
         assertionStep.checkDifferentElementsPageTitle(EXPECTED_DIFFERENT_ELEMENTS_PAGE_TITLE);
 
         //6. Select checkboxes

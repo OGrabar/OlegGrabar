@@ -1,14 +1,12 @@
 package hw4.users;
 
-public enum LoginUser {
-
-    ROMAN("Roman", "Jdi1234", "ROMAN IOVLEV");
+public class User {
 
     private String login;
     private String password;
     private String username;
 
-    LoginUser(String login, String password, String username){
+    public User(String login, String password, String username){
         this.login = login;
         this.password = password;
         this.username = username;

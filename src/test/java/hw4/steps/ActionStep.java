@@ -1,6 +1,6 @@
 package hw4.steps;
 
-import hw4.users.LoginUser;
+import hw4.users.User;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 
@@ -11,8 +11,8 @@ public class ActionStep extends AbstractStep{
     }
 
     @Step("Login with {loginUser} user")
-    public void performLogin(LoginUser loginUser) {
-        homePage.performLogin(loginUser);
+    public void performLogin(User user) {
+        homePage.performLogin(user);
     }
 
     @Step("Open home page")
@@ -20,9 +20,9 @@ public class ActionStep extends AbstractStep{
         homePage.openPage();
     }
 
-    @Step("Open different elements page")
-    public void openDifferentElementsPage() {
-        homePage.navToDifferentElementsPage();
+    @Step("Open {0} page through header Service menu")
+    public void openPageThroughHeaderServiceMenu(String page) {
+        homePage.navToPageThroughHeaderServiceMenu(page);
     }
 
     @Step("Switch to frame with button")

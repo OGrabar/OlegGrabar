@@ -1,7 +1,7 @@
 package hw4.pages.components;
 
-import hw4.pages.DifferentElementsPage;
-import hw4.users.LoginUser;
+import hw4.users.User;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,14 +34,14 @@ public class Header extends BaseComponent{
     @FindBy(xpath = "//a[@class = 'dropdown-toggle' and text()[contains(., 'Service')]]")
     private WebElement serviceMenu;
 
-    @FindBy(xpath = "//ul[@class ='dropdown-menu']/descendant-or-self::*[text() = 'Different elements']")
-    private WebElement differentElementsServiceMenuItem;
+    private static final String SERVICE_MENU_ITEM =
+            "//ul[@class ='dropdown-menu']/descendant-or-self::*[text()[contains(., '%s')]]";
 
     public Header(WebDriver driver) {
         super(driver);
     }
 
-    public Header performLogin(LoginUser loginUser) {
+    public Header performLogin(User loginUser) {
         loginDropdown.click();
         loginField.sendKeys(loginUser.getLogin());
         passwordField.sendKeys(loginUser.getPassword());
@@ -57,9 +57,8 @@ public class Header extends BaseComponent{
         return getNotEmptyTextFromWebElements(menuItems);
     }
 
-    public DifferentElementsPage navToDifferentElementsPage() {
+    public void navToPageThroughHeaderServiceMenu(String page) {
         serviceMenu.click();
-        differentElementsServiceMenuItem.click();
-        return new DifferentElementsPage(driver);
+        driver.findElement(By.xpath(String.format(SERVICE_MENU_ITEM, page))).click();
     }
 }

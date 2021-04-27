@@ -2,7 +2,7 @@ package hw4.pages;
 
 import java.util.List;
 
-import hw4.users.LoginUser;
+import hw4.users.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,8 +35,8 @@ public class HomePage extends BasePage {
     }
 
     @Override
-    public HomePage performLogin(LoginUser loginUser) {
-        super.performLogin(loginUser);
+    public HomePage performLogin(User user) {
+        super.performLogin(user);
         return this;
     }
 
@@ -60,9 +60,5 @@ public class HomePage extends BasePage {
 
     public void switchToIndexPage() {
         driver.switchTo().defaultContent();
-    }
-
-    public DifferentElementsPage navToDifferentElementsPage() {
-        return header.navToDifferentElementsPage();
     }
 }
