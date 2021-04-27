@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Mult and div test suite">
+    <test name="Mult tests">
+        <classes>
+            <class name="hw1.arithmetic.MultOperationTest" />
+        </classes>
+    </test>
+
+    <test name="Div tests">
+        <classes>
+            <class name="hw1.arithmetic.DivOperationTest" />
+        </classes>
+    </test>
+</suite>
